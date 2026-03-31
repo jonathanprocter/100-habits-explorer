@@ -1,0 +1,2706 @@
+{
+  "habits": [
+    {
+      "id": 1,
+      "name": "Celebrate Your Progress",
+      "description": "Write down 3 accomplishments at the end of each day in your Monk Manual. Take an intentional moment to appreciate your progress, even if it's not exactly where you imagined you'd be at this point in time. Focusing on the good can help build momentum towards gratitude and better outcomes.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "writing",
+        "gratitude",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Acknowledging daily wins builds momentum and trains your mind to focus on progress rather than perfection."
+    },
+    {
+      "id": 2,
+      "name": "Gratitude Letters",
+      "description": "Write and send a hand-written thank you letter to someone you care about everyday. Attempt to carve out space to be purposeful with your gratitude.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "moderate",
+      "tags": [
+        "writing",
+        "gratitude",
+        "social"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Handwritten gratitude strengthens relationships and shifts your focus from what's missing to what's present."
+    },
+    {
+      "id": 3,
+      "name": "Gratitude List",
+      "description": "Write and reflect on a list of 5 things you are grateful for every evening. Try to not repeat yourself and make sure to name why you're grateful as well.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "writing",
+        "gratitude",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "A nightly gratitude list rewires your brain to scan for the positive, improving both mood and sleep quality."
+    },
+    {
+      "id": 4,
+      "name": "No Complaining",
+      "description": "Give up complaining for one month. When you catch yourself complaining, either (1) reframe the situation to find hope or acceptance in it or (2) take an action step to shift the situation or thing you are complaining about. Option 1 is helpful when Option 2 feels out of your control, and through surrender we can find peace.",
+      "category": "Gratitude",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "mindfulness",
+        "discipline",
+        "elimination"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Eliminating complaints forces you to either accept situations or take action \u2014 both paths lead to greater inner peace."
+    },
+    {
+      "id": 5,
+      "name": "Gratitude at Meals",
+      "description": "Say a prayer or intention of gratitude before all of your meals, for those who helped prepare the meal, the provision of good food, and all the steps it took to get to you.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "gratitude",
+        "mindfulness",
+        "spiritual"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Pausing before meals anchors gratitude into a daily rhythm you already have, making thankfulness effortless."
+    },
+    {
+      "id": 6,
+      "name": "Transform the Mundane",
+      "description": "Find the gift or beauty in the ordinary and mundane activities throughout the day. Use the back pages of your Monk Manual to make an ongoing list of the small, simple and beautiful things you notice each day.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "gratitude",
+        "writing"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Finding beauty in ordinary moments cultivates a deep sense of wonder and contentment with everyday life."
+    },
+    {
+      "id": 7,
+      "name": "Post-Event Gratitude",
+      "description": "At the end of each event in your day, send a message or email of gratitude to someone involved.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "gratitude",
+        "social",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Expressing gratitude after events strengthens connections and ensures appreciation doesn't go unspoken."
+    },
+    {
+      "id": 8,
+      "name": "Gratitude Jar",
+      "description": "Write one thing you're grateful for at the end of each day, and put it in a jar. At the end of the month, read through your gratitude jar. Tip: it's fun to do this with family members or friends.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "writing",
+        "gratitude",
+        "family"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "A gratitude jar creates a tangible collection of blessings you can revisit whenever you need encouragement."
+    },
+    {
+      "id": 9,
+      "name": "Gratitude Meditations",
+      "description": "Practice meditating daily on the presence of something significant in your life. Consider what your life would be like without that significance, and then try to return to the moment without taking that person or thing for granted.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "meditation",
+        "gratitude",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Meditating on what you have deepens appreciation and guards against the tendency to take blessings for granted."
+    },
+    {
+      "id": 10,
+      "name": "Positive Affirmations",
+      "description": "Start your day by writing or speaking positive affirmations, choosing specific affirmations that help you in the areas where you notice the most criticism, fear, or worry in your life. Tip: Try speaking these words out loud, in front of the mirror.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "gratitude",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 4,
+      "whyItMatters": "Starting your day with positive affirmations sets a hopeful tone and counters the inner critic before it gains momentum."
+    },
+    {
+      "id": 11,
+      "name": "No Screens Before Bed",
+      "description": "For a set amount of time before bed (30 minutes or 1 hour, for example) keep your phone off or in another room. Avoid computer screens, TV, and other tech as well. This can help improve the quality of your sleep and create a more peaceful evening routine.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "evening",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "health",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Removing screens before bed improves sleep quality and creates space for more meaningful evening rituals."
+    },
+    {
+      "id": 12,
+      "name": "Turn Off the News",
+      "description": "One month without the news media, except for when absolutely necessary.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "mindfulness",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Stepping away from the news cycle reduces anxiety and frees mental energy for what you can actually influence."
+    },
+    {
+      "id": 13,
+      "name": "Wake Up at the Same Time Every Day",
+      "description": "Create a sense of rhythm and simplicity in your day by committing to rise at the same time every morning. Choose a time that will help create a successful structure, while also being realistic enough to maintain for an entire month.",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "routine",
+        "discipline",
+        "health"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "A consistent wake time regulates your body clock, improving energy, mood, and the quality of your entire day."
+    },
+    {
+      "id": 14,
+      "name": "Delete or Delegate One Thing Per Day",
+      "description": "Pick one task, project, or item you can delete or delegate. This can be as small as deleting files on your desktop and as large as delegating a project or activity to someone else at work or in your family. It's okay if it means asking for help.",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 10,
+      "difficulty": "moderate",
+      "tags": [
+        "discipline",
+        "work",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Letting go of one task daily creates breathing room and teaches you that not everything requires your personal attention."
+    },
+    {
+      "id": 15,
+      "name": "Information Detox",
+      "description": "Pause learning and reading new material for 1 month to create peace in your mind and encourage implementation of what you already know. This is ideal after a time of education and training, to remove more learning as a means of distraction and procrastination and focus on action instead.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "elimination",
+        "mindfulness",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Pausing new input encourages you to act on what you already know, turning knowledge into real change."
+    },
+    {
+      "id": 16,
+      "name": "Eat at Home",
+      "description": "No dining out at restaurants or take-out for one month. Tip: Donate or save the money you would have spent on dining out at restaurants.",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "cooking",
+        "financial",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Eating at home simplifies your routine, saves money, and brings intentionality to how you nourish yourself."
+    },
+    {
+      "id": 17,
+      "name": "Conscious Commute",
+      "description": "Walk or bike instead of drive (whenever possible).",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "exercise",
+        "mindfulness",
+        "environmental"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Walking or biking instead of driving slows your pace, reduces your footprint, and turns transit into a mindful practice."
+    },
+    {
+      "id": 18,
+      "name": "No Unnecessary Purchases",
+      "description": "Resolve to save funds and recognize the abundance you already have by avoiding all unnecessary purchases\u2014from eating at restaurants, to new clothes, technology, or extravagant food. At the end of the month, you may have money to save or donate, but best of all, a sense of peace that what you have is enough.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "financial",
+        "discipline",
+        "elimination"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Avoiding unnecessary purchases reveals how much abundance you already have and cultivates deep contentment."
+    },
+    {
+      "id": 19,
+      "name": "Prepare Wardrobe",
+      "description": "Choose your outfit the evening before. Tip: Go minimalist for one month and rotate the same number of items all month. This is also called \u201ca capsule wardrobe.\u201d",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "routine",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Choosing your outfit the night before removes morning decision fatigue and starts your day with calm clarity."
+    },
+    {
+      "id": 20,
+      "name": "Eliminate Non-Essential",
+      "description": "Design category based on what you need most! Examples being: non-essential meetings, purchases, texting, snacking, caffeinating, news watching, texting, etc.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 5,
+      "whyItMatters": "Eliminating non-essentials creates space for what truly matters and teaches you to distinguish need from habit."
+    },
+    {
+      "id": 21,
+      "name": "Prepare Each Morning",
+      "description": "Spend 10\u201315 minutes planning your day in advance the morning of or the evening before. Practice intentional time management and make space for the priorities you established at the beginning of the week and month.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "routine",
+        "discipline",
+        "work"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Planning your morning with intention ensures your priorities \u2014 not distractions \u2014 shape the direction of your day."
+    },
+    {
+      "id": 22,
+      "name": "Practice Radical Honesty",
+      "description": "Speak the truth. No white lies\u2014or big lies. Be truthful, kind, and intentional with your words. Recognize where you may be withholding the truth out of fear or comfort. This habit is an important part of emotional maturity and living with integrity.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "communication",
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Radical honesty builds trust, deepens relationships, and frees you from the exhausting weight of pretense."
+    },
+    {
+      "id": 23,
+      "name": "Pause Before Making Decisions",
+      "description": "Is this the best thing for me right now? How will this impact others? Ask yourself these questions\u2014or other similar questions you create\u2014before making decisions throughout the day, especially the big ones.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "discipline",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Pausing before decisions prevents impulsive choices and ensures your actions align with your deeper values."
+    },
+    {
+      "id": 24,
+      "name": "Rise 1 Hour Earlier",
+      "description": "Enjoy the benefits of being a morning person with one extra hour for whatever you choose\u2014prayer, exercise, family time, work, or a combination of these. This may require going to bed one hour earlier, too, so keep in mind this habit may start the night before with an earlier bedtime routine.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 60,
+      "difficulty": "challenging",
+      "tags": [
+        "routine",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "An extra morning hour gives you uninterrupted time for growth before the world's demands begin."
+    },
+    {
+      "id": 25,
+      "name": "Heroic Minute",
+      "description": "Get up with your alarm, don't press snooze.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "routine",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Getting up immediately with your alarm builds willpower and sets a tone of decisive action for the entire day."
+    },
+    {
+      "id": 26,
+      "name": "Finish the Task",
+      "description": "Every day commit to finishing something that you started.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "discipline",
+        "work"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Finishing what you start builds confidence and breaks the cycle of half-completed projects draining your energy."
+    },
+    {
+      "id": 27,
+      "name": "Make Art Daily",
+      "description": "Practice or work on your art every day, for a set amount of time. Creative outlets can include music, writing, painting, drawing, design, poetry, etc.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "art",
+        "creativity"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Daily creative practice nurtures self-expression and provides a meditative outlet that enriches every other area of life."
+    },
+    {
+      "id": 28,
+      "name": "Write 500 Words Per Day",
+      "description": "Choose a word count for each day and decide when you will fit in your writing hour. 500 is an example, but depending on your project and schedule you may choose 1,000 or 2,000.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "writing",
+        "creativity",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "A daily word count turns writing from an aspiration into a discipline, and small daily efforts compound into finished works."
+    },
+    {
+      "id": 29,
+      "name": "Work Sprints",
+      "description": "Practice intentional and distraction-free work blocks and breaks, also called the Pomodoro Method. For example, plan to work for 1 hour and then take a 10 minute break. Repeat twice and then take a longer break.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 60,
+      "difficulty": "moderate",
+      "tags": [
+        "work",
+        "discipline",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Focused work sprints train deep concentration and prove that quality output comes from intensity, not long hours."
+    },
+    {
+      "id": 30,
+      "name": "Be Gentle with Your Words",
+      "description": "Practice being compassionate with your words towards others. This will elevate your relationships over time, and can elevate the thoughts you use towards yourself too.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "communication",
+        "compassion",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 6,
+      "whyItMatters": "Gentle words elevate your relationships and gradually reshape the way you speak to yourself as well."
+    },
+    {
+      "id": 31,
+      "name": "Time Block",
+      "description": "Plan each day ahead, blocking out the whole day or work day.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "routine",
+        "discipline",
+        "work"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Time blocking transforms vague intentions into concrete commitments, giving structure and purpose to every hour."
+    },
+    {
+      "id": 32,
+      "name": "Set a Morning or Evening Routine",
+      "description": "Set a Morning or Evening Routine and follow it for a month.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "routine",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "A consistent routine removes daily decision fatigue and creates a reliable container for your most important habits."
+    },
+    {
+      "id": 33,
+      "name": "Organize and Clean",
+      "description": "Clean or declutter one aspect of your home or life everyday. This can be as simple as cleaning all of the dishes and putting them away after meals, or bigger projects like cleaning a closet or going through storage.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "routine",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Daily decluttering creates physical order that calms the mind and makes space for clarity and focus."
+    },
+    {
+      "id": 34,
+      "name": "Place People Before Projects",
+      "description": "Commit to prioritizing relationships before work. While your work life is still important, rightfully placing friends and family ahead of projects and work contributions can ensure that these relationships become a central part of your life, rather than an afterthought. A simple phone call, e-mail, or even a scheduled lunch date can help shift your perspective and breathe life back into those relationships.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "social",
+        "family",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Prioritizing people over projects ensures that your most important relationships don't become afterthoughts."
+    },
+    {
+      "id": 35,
+      "name": "First Things First",
+      "description": "Do your most important or challenging work first each day.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "discipline",
+        "work",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Tackling your hardest task first leverages peak willpower and creates a sense of accomplishment that carries through the day."
+    },
+    {
+      "id": 36,
+      "name": "Clean Off the Desk",
+      "description": "Create a daily routine of clearing your desk and work area once you are done working. This helps you stay organized and also acts as closure from your day\u2019s activities.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "routine",
+        "discipline",
+        "work"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Clearing your desk at day's end provides closure and ensures you start tomorrow with a clean slate."
+    },
+    {
+      "id": 37,
+      "name": "Set an Exercise Routine",
+      "description": "Establish a workout routine that you enjoy and can follow throughout your week. Whether it\u2019s every other day, 3 times a week, or daily, finding a way to move your body physically can benefit your mental and emotional health as well.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 45,
+      "difficulty": "moderate",
+      "tags": [
+        "exercise",
+        "health",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "A regular exercise routine strengthens not just your body but your mental resilience and emotional balance."
+    },
+    {
+      "id": 38,
+      "name": "Get to Bed at X Time",
+      "description": "Start your evening routine and go to bed at the same time every night. This provides a rhythm for your day and regulates your circadian rhythm.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "routine",
+        "health",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "A consistent bedtime regulates your circadian rhythm, improving sleep quality and next-day energy."
+    },
+    {
+      "id": 39,
+      "name": "Make Your Bed Every Morning",
+      "description": "To set the tone for the day, commit to starting the morning with this one simple, yet impactful, resolution.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "routine",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Making your bed is a small act of order that sets a productive tone and gives you an immediate sense of accomplishment."
+    },
+    {
+      "id": 40,
+      "name": "Set Work Hours",
+      "description": "If you work from home or set your own schedule, commit to keeping the same work hours every workday. On non-work days, create a routine for when you will log-off from tech or something equally restorative. If you are lacking a routine in work, this can be a helpful habit for increased productivity and peace.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "work",
+        "discipline",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 7,
+      "whyItMatters": "Defined work hours create healthy boundaries between productivity and rest, preventing burnout."
+    },
+    {
+      "id": 41,
+      "name": "Random Act of Kindness",
+      "description": "Perform one random act of kindness daily, ideas can include things like donating, volunteering, paying for a stranger\u2019s meal, picking up trash while on a walk\u2014the options are endless!",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "compassion",
+        "social"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Random acts of kindness create ripple effects of goodwill and remind you that generosity is always within reach."
+    },
+    {
+      "id": 42,
+      "name": "Find a Local Charity",
+      "description": "Find a Local Charity to Support and Grow With, and take one action step daily\u2014ranging from contributing, volunteering, researching and educating yourself, or connecting with others within the organization.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "compassion",
+        "social",
+        "community"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Supporting a local charity connects you to your community and channels your energy toward meaningful impact."
+    },
+    {
+      "id": 43,
+      "name": "Check-In with a Loved One",
+      "description": "Check-In with One Friend or Loved One Daily, or choose the same person daily like a spouse or roommate or other family member to check-in and provide support all month long.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "social",
+        "family",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "A daily check-in shows loved ones they matter and keeps relationships strong even during busy seasons."
+    },
+    {
+      "id": 44,
+      "name": "Be Kind to Strangers",
+      "description": "Ask service staff or other people you meet how their day is going, make eye contact, be willing to say hello and treat people you don\u2019t know (or who serve you) with kindness each day.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "compassion",
+        "social",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Treating strangers with kindness expands your circle of compassion and brightens both their day and yours."
+    },
+    {
+      "id": 45,
+      "name": "Skip One Expense Daily",
+      "description": "Skip One Expense Daily and Donate the Money.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "financial",
+        "compassion",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Skipping one expense daily builds generosity as a reflex and reveals how small sacrifices can fund meaningful giving."
+    },
+    {
+      "id": 46,
+      "name": "Anticipate Spouse's Needs",
+      "description": "Anticipate Roommate\u2019s/Spouse\u2019s Needs: Give them the first cup of coffee in the morning; clean shared space without expecting acknowledgement.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 10,
+      "difficulty": "moderate",
+      "tags": [
+        "family",
+        "compassion",
+        "social"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Anticipating a partner's needs shifts your focus from self to service, deepening intimacy and trust."
+    },
+    {
+      "id": 47,
+      "name": "Be Generous with Praise",
+      "description": "Encourage someone each day. Share genuine appreciation.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "communication",
+        "compassion",
+        "social"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Generous praise lifts others up and trains you to notice the good in the people around you."
+    },
+    {
+      "id": 48,
+      "name": "Go Plastic-Free",
+      "description": "Go Plastic-Free or Low-Waste All Month.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "environmental",
+        "discipline",
+        "elimination"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Going plastic-free is an act of generosity toward the planet and future generations."
+    },
+    {
+      "id": 49,
+      "name": "Speak Less, Listen More",
+      "description": "Be comfortable with silence and enjoy the fruits of listening.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "communication",
+        "mindfulness",
+        "patience"
+      ],
+      "bonus": false,
+      "page": 8,
+      "whyItMatters": "Listening more than you speak deepens understanding and shows others that their voice truly matters."
+    },
+    {
+      "id": 50,
+      "name": "Practice Hospitality",
+      "description": "Take one step to cultivate a welcoming home daily: open your space to guests, entertain family and friends, decorate or prepare a special meal.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "social",
+        "family",
+        "cooking"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Practicing hospitality transforms your home into a place of warmth and connection for everyone who enters."
+    },
+    {
+      "id": 51,
+      "name": "Quality Time with Partner",
+      "description": "Spend quality time\u2014an intentional conversation, shared activity, or meal without distractions\u2014with your spouse or partner daily.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "family",
+        "social",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Undistracted time with your partner strengthens your bond and keeps your relationship at the center of your life."
+    },
+    {
+      "id": 52,
+      "name": "Quality Time with Kids",
+      "description": "Choose one way to spend quality time with your children each day. Read a book, play a fun game or ask 20 questions to connect.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "family",
+        "social"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Quality time with your children builds lasting memories and shows them they are your highest priority."
+    },
+    {
+      "id": 53,
+      "name": "Be Honest with Loved Ones",
+      "description": "Practice vulnerability and honesty with loved ones.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "communication",
+        "family",
+        "social"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Vulnerability with loved ones creates deeper trust and models the emotional honesty that strengthens families."
+    },
+    {
+      "id": 54,
+      "name": "Put the Phone Down",
+      "description": "Put the Phone Down at the dinner table. And, once you\u2019ve mastered that, try to remember to do this throughout the day when you are with people.",
+      "category": "Relationships",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "family",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Putting the phone down signals to those around you that they have your full, undivided presence."
+    },
+    {
+      "id": 55,
+      "name": "Get Outside Together",
+      "description": "Get Outside Together.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "easy",
+      "tags": [
+        "family",
+        "social",
+        "exercise"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Shared outdoor time creates natural opportunities for conversation and connection away from screens."
+    },
+    {
+      "id": 56,
+      "name": "Connection",
+      "description": "Make intentional plans and time to connect with friends or family on a daily basis. Even a five minute video call can be a great place to start.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "social",
+        "family",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Intentional daily connection prevents relationships from fading and keeps your social bonds vibrant."
+    },
+    {
+      "id": 57,
+      "name": "No Gossiping",
+      "description": "If you don\u2019t have something good to say, don\u2019t say it at all. Speak highly of others when possible and remove yourself from situations or discussions that speak poorly about others.",
+      "category": "Relationships",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "communication",
+        "elimination",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Refusing to gossip protects others' dignity and elevates the quality of every conversation you have."
+    },
+    {
+      "id": 58,
+      "name": "Network",
+      "description": "Reach out to a mentor, possible mentor, or connection for a networking opportunity. Set a measurable goal of how much outreach you\u2019d like to do per day (e.g. Contact 1\u20138 people a day). Do this as a gesture of mutual growth and collaboration!",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "social",
+        "work",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 9,
+      "whyItMatters": "Consistent networking builds a web of mutual support that opens doors for growth and collaboration."
+    },
+    {
+      "id": 59,
+      "name": "Journal Daily",
+      "description": "Write X pages every day in a journal. Can be \u2018stream of consciousness\u2019 writing or specific reflections and feelings on a topic or theme.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "moderate",
+      "tags": [
+        "writing",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "Daily journaling creates a mirror for your thoughts, helping you process emotions and track personal growth."
+    },
+    {
+      "id": 60,
+      "name": "Evening Routine",
+      "description": "Spend 15 minutes every evening reflecting on your day.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "routine",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "An evening reflection ritual helps you close the day with intention and extract lessons from your experiences."
+    },
+    {
+      "id": 61,
+      "name": "Process Through Art",
+      "description": "Utilize writing or art as a tool to process your emotions or help with healing on a daily basis.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "moderate",
+      "tags": [
+        "art",
+        "creativity",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "Processing emotions through art provides a healing outlet that words alone sometimes cannot reach."
+    },
+    {
+      "id": 62,
+      "name": "Ta-Da List",
+      "description": "Make a retro-to-do list, also called a \u201cTa-Da List\u201d by reflecting on how you spent your time that day, including what you accomplished.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "writing",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "A Ta-Da list celebrates what you accomplished rather than fixating on what remains, building positive momentum."
+    },
+    {
+      "id": 63,
+      "name": "Photo Gallery",
+      "description": "Take a photo or short video every day\u2014at the end of the month reflect back on your month.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "creativity",
+        "reflection"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "A daily photo captures moments you'd otherwise forget and creates a visual journal of your month."
+    },
+    {
+      "id": 64,
+      "name": "Reflect on Highlights",
+      "description": "Write down three of your highlights, or favorite moments, at the end of the day.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "writing",
+        "reflection",
+        "gratitude"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "Reflecting on highlights trains your memory to hold onto joy and helps you see the richness in each day."
+    },
+    {
+      "id": 65,
+      "name": "Meditate on Your Purpose",
+      "description": "Reflect every morning on why it\u2019s important to you (or what\u2019s important to you).",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 10,
+      "difficulty": "moderate",
+      "tags": [
+        "meditation",
+        "reflection",
+        "spiritual"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "Morning purpose meditation aligns your daily actions with your deeper values before distractions arise."
+    },
+    {
+      "id": 66,
+      "name": "Check-In with You",
+      "description": "Maintain a daily mental health check-in to assess your stress levels, energy and mood. It may be helpful to journal about your assessment, while also remembering to practice self-acceptance and compassion too.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 10,
+      "difficulty": "moderate",
+      "tags": [
+        "health",
+        "reflection",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "A daily mental health check-in builds self-awareness and helps you respond to stress before it escalates."
+    },
+    {
+      "id": 67,
+      "name": "Reflection Touchpoints",
+      "description": "Integrate reflection into your day by taking a moment after meetings and conversation to reflect on what went well, what was meaningful, or insightful. Commit to doing this at least twice throughout the day and plan for this pause ahead of time to ensure you make the time.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 10,
+      "difficulty": "moderate",
+      "tags": [
+        "reflection",
+        "mindfulness",
+        "work"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "Pausing to reflect after interactions deepens learning and helps you carry insights forward into the next moment."
+    },
+    {
+      "id": 68,
+      "name": "Dream Journal",
+      "description": "Write in a dream journal every morning.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "writing",
+        "reflection",
+        "creativity"
+      ],
+      "bonus": false,
+      "page": 10,
+      "whyItMatters": "Recording dreams each morning opens a window into your subconscious and sparks creative insight."
+    },
+    {
+      "id": 69,
+      "name": "Stillness Speaks",
+      "description": "Make time for silence daily. Set a certain amount of time to enjoy the quiet, whether it\u2019s 5 minutes or 20 minutes a day. Other examples\u2014no music while driving, walks without podcasts or music, etc.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "meditation"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Embracing daily silence calms the nervous system and reveals the clarity that lives beneath constant noise."
+    },
+    {
+      "id": 70,
+      "name": "Mindful Meal",
+      "description": "One mindful meal a day\u2014no tech or tv. Optional: eating in silence and gratitude.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 20,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "health"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Eating mindfully transforms a routine act into a practice of presence, improving both digestion and enjoyment."
+    },
+    {
+      "id": 71,
+      "name": "Do Something Difficult",
+      "description": "Do Something Difficult Daily that requires physical or mental focus and presence.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "challenging",
+      "tags": [
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Doing something difficult daily builds resilience and proves to yourself that you can handle discomfort."
+    },
+    {
+      "id": 72,
+      "name": "Here-and-Now Hour",
+      "description": "Set aside one hour every day to focus on being present. Put away all tech, work, and any other distractions in order to spend quality time in your space with your people. Go on a walk, read, have a conversation.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 60,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "family"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "One distraction-free hour each day restores your attention and deepens your connection to the present moment."
+    },
+    {
+      "id": 73,
+      "name": "Ground Yourself",
+      "description": "Stop 3\u20134 times a day to ground yourself in the present moment. Choose to either read something short and inspirational or stop and take 5 minutes of conscious breathing. Schedule these times in advance, if you can, so they provide a regular touchpoint of presence that you can look forward to throughout the day.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "meditation",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Regular grounding breaks throughout the day prevent stress from accumulating and keep you anchored in the present."
+    },
+    {
+      "id": 74,
+      "name": "Social Media Detox",
+      "description": "Give up social media all month\u2014or limit the time you spend on your device by setting time limits.",
+      "category": "Presence",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "elimination",
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Stepping away from social media reclaims hours of attention and frees you from the comparison trap."
+    },
+    {
+      "id": 75,
+      "name": "Do One Thing at a Time",
+      "description": "Avoid multitasking and focus on what\u2019s right in front of you. Do it with care and attention. Practice this every day for one month and then reflect on your productivity shifts at the end of the month.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "discipline",
+        "work"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Single-tasking improves the quality of everything you do and reduces the mental fatigue of constant context-switching."
+    },
+    {
+      "id": 76,
+      "name": "Tend to Your Garden",
+      "description": "Spend at least 10 minutes a day tending to your garden (indoor or outdoor), and more time if and when possible. This habit can help you become more present and also feel grounded and connected to the earth.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "nature"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Tending a garden connects you to natural rhythms and provides a meditative practice that grounds you in the earth."
+    },
+    {
+      "id": 77,
+      "name": "Pay Full Attention",
+      "description": "Give full attention to your kids or spouse or friends when they are speaking to you.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "family",
+        "communication"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Giving someone your full attention is one of the most generous gifts you can offer in a distracted world."
+    },
+    {
+      "id": 78,
+      "name": "No Rushing",
+      "description": "If you are consistently late, try giving yourself an extra 15 minutes when leaving for work or other activities. This extra time will allow you to slow down and reflect on the difference of feeling rushed versus feeling relaxed. At the end of each day, ask yourself: did I feel hurried or was I able to be more present?",
+      "category": "Presence",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "patience",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 11,
+      "whyItMatters": "Releasing the habit of rushing allows you to move through life with greater calm, awareness, and enjoyment."
+    },
+    {
+      "id": 79,
+      "name": "Get Outside",
+      "description": "Spend time outside daily. X minutes or hours a day. Examples for outdoor exploration include parks, hiking, long walks outside, areas away from loud noise or cars, or even sitting on your front porch.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "easy",
+      "tags": [
+        "nature",
+        "health",
+        "exercise"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Time outdoors restores mental energy, boosts mood, and reconnects you with the natural world."
+    },
+    {
+      "id": 80,
+      "name": "No Alcohol",
+      "description": "Resolve to take one month off from drinking, or reduce your drinking amount (example no drinking on weekdays). See our \u201cTips and Tricks\u201d section at the end of this document.",
+      "category": "Balance",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "health",
+        "elimination",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "A month without alcohol reveals how much clearer your mind, sleep, and energy can become."
+    },
+    {
+      "id": 81,
+      "name": "Walk Daily",
+      "description": "Set a goal and walk an allotted amount of steps per day\u20148k or 10k, depending on your normal activity level, can be sweet spots that are challenging yet feasible.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 45,
+      "difficulty": "easy",
+      "tags": [
+        "exercise",
+        "health"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Walking is the simplest form of movement, yet it profoundly benefits your body, mind, and creativity."
+    },
+    {
+      "id": 82,
+      "name": "Eat Healthy Foods",
+      "description": "Eat nourishing foods every day for one month. Choose what foods you will eat daily and which category you will aim to avoid (examples being: fast food, processed food, sweets).",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "health",
+        "cooking",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Choosing nourishing foods daily is an act of self-respect that compounds into lasting vitality."
+    },
+    {
+      "id": 83,
+      "name": "Move Your Body",
+      "description": "Find a form of exercise you enjoy and commit to moving your body daily.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "easy",
+      "tags": [
+        "exercise",
+        "health"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Finding movement you enjoy makes exercise sustainable and turns physical activity into a source of joy."
+    },
+    {
+      "id": 84,
+      "name": "No Desserts",
+      "description": "No sweets for a month or eliminate added and processed sugar from your diet for one month.",
+      "category": "Balance",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "health",
+        "elimination",
+        "discipline"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Eliminating sweets for a month resets your palate and breaks the cycle of sugar cravings."
+    },
+    {
+      "id": 85,
+      "name": "Reduce Caffeine",
+      "description": "Take 1 month off of coffee or reduce caffeine intake by avoiding caffeine after lunch. This can help your health, nervous system, and sleep patterns.",
+      "category": "Balance",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "health",
+        "elimination"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Reducing caffeine can improve sleep, lower anxiety, and reveal your natural energy levels."
+    },
+    {
+      "id": 86,
+      "name": "Drink Water",
+      "description": "Adequately hydrate by drinking 8\u201310 cups of water per day. A helpful rule of thumb is to drink half of your bodyweight, in ounces.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "health"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Proper hydration is the foundation of physical health, improving energy, focus, and overall well-being."
+    },
+    {
+      "id": 87,
+      "name": "Encourage Yourself",
+      "description": "Your best is enough. If you\u2019d like, place a note in your phone or on your calendar to remind yourself that you can do hard things. Finding a mantra to repeat, especially when the days get tough, is also a great way to find encouragement and self love.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "gratitude"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Self-encouragement builds inner resilience and ensures you have a compassionate voice guiding you through tough days."
+    },
+    {
+      "id": 88,
+      "name": "Practice a Virtue",
+      "description": "Choose one virtue and commit to practicing it daily for one month. Keep track of your progress in your Monk Manual.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "spiritual",
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 12,
+      "whyItMatters": "Practicing a single virtue for a month deepens character and creates lasting moral strength."
+    },
+    {
+      "id": 89,
+      "name": "Start with Spiritual Practice",
+      "description": "Give God your first and best, not the leftovers. When we spend the first 20, 30, or 60 minutes focusing on our spiritual practice, we set the tone for our days and also ensure we are nurturing this important aspect of being.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "spiritual",
+        "routine",
+        "meditation"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Beginning with spiritual practice ensures your deepest values set the tone before the world's noise begins."
+    },
+    {
+      "id": 90,
+      "name": "Spend Time in Nature",
+      "description": "Whether 10 minutes or a full hike, get out into nature every day to connect with the beauty and peace of the outdoors.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "easy",
+      "tags": [
+        "nature",
+        "spiritual",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Time in nature connects you to something larger than yourself and restores a sense of awe and peace."
+    },
+    {
+      "id": 91,
+      "name": "Daily Prayer Routine",
+      "description": "Set and follow a daily prayer routine, either morning or evening (or both).",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "spiritual",
+        "prayer",
+        "routine"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "A daily prayer routine creates a sacred rhythm that anchors your spiritual life through every season."
+    },
+    {
+      "id": 92,
+      "name": "Spiritual Reading",
+      "description": "Aim for every morning, or X minutes per day.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 20,
+      "difficulty": "moderate",
+      "tags": [
+        "reading",
+        "spiritual"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Spiritual reading nourishes the soul and provides wisdom that shapes how you see the world each day."
+    },
+    {
+      "id": 93,
+      "name": "Meditate Daily",
+      "description": "Meditate a certain amount of time each day, start with a lower time allotment and then increase in small amounts to help encourage focus.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "meditation",
+        "spiritual",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Daily meditation cultivates inner stillness and strengthens your ability to remain centered amid life's chaos."
+    },
+    {
+      "id": 94,
+      "name": "Uplifting Music",
+      "description": "Only listen to enriching or positive music, which can cultivate an environment that is peaceful or spiritually nurturing.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "easy",
+      "tags": [
+        "spiritual",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Uplifting music shapes your inner environment, creating a soundtrack of peace and positivity throughout the day."
+    },
+    {
+      "id": 95,
+      "name": "Listen in Prayer",
+      "description": "Each morning ask God, \u201cWhat are you teaching me?\u201d Be still and listen.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 10,
+      "difficulty": "moderate",
+      "tags": [
+        "spiritual",
+        "prayer",
+        "meditation"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Listening in prayer cultivates receptivity and trust, opening you to guidance beyond your own understanding."
+    },
+    {
+      "id": 96,
+      "name": "Moving Meditation",
+      "description": "Walk, dance, exercise as a mode of cathartic expression.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "easy",
+      "tags": [
+        "exercise",
+        "spiritual",
+        "meditation"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Moving meditation unites body and spirit, turning physical activity into a form of prayer and presence."
+    },
+    {
+      "id": 97,
+      "name": "Practice Non-Attachment",
+      "description": "At the end of the day, use your Monk Manual to reflect in appreciation and acceptance for what happened in your day. Cultivate peace and acceptance daily, no matter the results, by affirming your worthiness. Overtime, this habit can help you become more process-oriented, rather than outcome-oriented, which is helpful in multiple areas of life.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 10,
+      "difficulty": "challenging",
+      "tags": [
+        "spiritual",
+        "reflection",
+        "mindfulness"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Practicing non-attachment frees you from the tyranny of outcomes and cultivates peace regardless of results."
+    },
+    {
+      "id": 98,
+      "name": "Be Creative",
+      "description": "Write a poem or short story daily.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "moderate",
+      "tags": [
+        "creativity",
+        "writing",
+        "art"
+      ],
+      "bonus": false,
+      "page": 13,
+      "whyItMatters": "Daily creative expression connects you to the divine spark within and brings new beauty into the world."
+    },
+    {
+      "id": 99,
+      "name": "No Texting While Driving",
+      "description": "No Texting While Driving.",
+      "category": "Order",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "easy",
+      "tags": [
+        "discipline",
+        "elimination",
+        "health"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "This simple commitment protects your life and the lives of others on the road every single day."
+    },
+    {
+      "id": 100,
+      "name": "Nap or Rest Daily",
+      "description": "Nap or Rest Daily.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "easy",
+      "tags": [
+        "health",
+        "routine"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Intentional rest restores your energy and prevents the burnout that comes from constant productivity."
+    },
+    {
+      "id": 101,
+      "name": "Be on Time",
+      "description": "Be on Time.",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "discipline",
+        "routine"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Being on time shows respect for others and builds a reputation of reliability and integrity."
+    },
+    {
+      "id": 102,
+      "name": "Reduce Cellphone Use",
+      "description": "Reduce Cellphone Use and improve focus by keeping your phone on \u201cdo not disturb mode\u201d or in another room during your workday.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Reducing phone use reclaims your attention and helps you be more present in work and relationships."
+    },
+    {
+      "id": 103,
+      "name": "Follow Through",
+      "description": "Finish one or more tasks or commitments daily. Aim to make this a regular habit.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "discipline",
+        "work"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Following through on commitments builds trust with yourself and others, strengthening your sense of integrity."
+    },
+    {
+      "id": 104,
+      "name": "Be Patient",
+      "description": "Don\u2019t rush others. Be kind to yourself if you are taking longer to accomplish something or make an important life decision.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "patience",
+        "mindfulness",
+        "compassion"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Patience with yourself and others creates space for growth and reduces the stress of unrealistic timelines."
+    },
+    {
+      "id": 105,
+      "name": "Take the Next Best Step",
+      "description": "Each day take the next step towards an important project or goal. At the end of the month appreciate your progress!",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "discipline",
+        "work"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Taking the next best step turns overwhelming goals into manageable daily progress that compounds over time."
+    },
+    {
+      "id": 106,
+      "name": "Learn Something New Every Day",
+      "description": "Commit to growing in knowledge or practice daily. Examples being: learning an instrument, a language, course, program, art form, or a work training. You can choose more than one skill to learn!",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "learning",
+        "creativity",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Daily learning keeps your mind sharp and ensures you're always growing, no matter your age or stage."
+    },
+    {
+      "id": 107,
+      "name": "Read Before Bed",
+      "description": "Read Before Bed. Tip: Make sure it is something uplifting or enriching.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 20,
+      "difficulty": "easy",
+      "tags": [
+        "reading",
+        "routine",
+        "reflection"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Reading before bed replaces screen time with enrichment and helps your mind wind down peacefully."
+    },
+    {
+      "id": 108,
+      "name": "Make Time for Adventure and Play",
+      "description": "Make Time for Adventure and Play.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "easy",
+      "tags": [
+        "health",
+        "creativity"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Play and adventure keep your spirit young and remind you that life is meant to be enjoyed, not just endured."
+    },
+    {
+      "id": 109,
+      "name": "Stretch Daily",
+      "description": "Stretch Daily.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "exercise",
+        "health"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Daily stretching releases tension, improves flexibility, and creates a mindful pause in your physical routine."
+    },
+    {
+      "id": 110,
+      "name": "Be Social",
+      "description": "Be in community or reach out to friends for intentional connection. Smile more and share your joy with others.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "social",
+        "communication"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Intentional social connection combats isolation and fills your life with the energy of shared joy."
+    },
+    {
+      "id": 111,
+      "name": "Replace Negative Self-Talk",
+      "description": "Replace Negative Self-Talk with positive affirmations or self compassion daily.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "gratitude",
+        "compassion"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Replacing negative self-talk with compassion transforms your inner world and radiates outward into every interaction."
+    },
+    {
+      "id": 112,
+      "name": "Tell Your Loved Ones I Love You",
+      "description": "Tell Your Loved Ones \u201cI Love You\u201d More Often.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "family",
+        "communication",
+        "social"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Saying 'I love you' more often ensures the people who matter most never have to wonder how you feel."
+    },
+    {
+      "id": 113,
+      "name": "Cook a Meal from Scratch Daily",
+      "description": "Cook a Meal from Scratch Daily.",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 45,
+      "difficulty": "moderate",
+      "tags": [
+        "cooking",
+        "health"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Cooking from scratch connects you to your food, simplifies your diet, and turns meal preparation into a creative act."
+    },
+    {
+      "id": 114,
+      "name": "Be There for Those You Care About",
+      "description": "Be There for Those Who You Care About by checking-in on one friend every day in a genuine and caring way. You are free to repeat friends throughout the month.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "social",
+        "compassion",
+        "communication"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Showing up for the people you care about builds deep trust and ensures no one feels forgotten."
+    },
+    {
+      "id": 115,
+      "name": "Take the Stairs",
+      "description": "Take the Stairs, literally and as a mindset! Take the opportunities to be active throughout your day.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "exercise",
+        "health"
+      ],
+      "bonus": true,
+      "page": 14,
+      "whyItMatters": "Taking the stairs is a simple way to weave movement into your day and build an active mindset."
+    },
+    {
+      "id": 116,
+      "name": "Find a Workout You Enjoy",
+      "description": "Find a Workout You Enjoy and do it 5 times a week, with 2 active rest days (examples of active rest days being stretching or an easy walk).",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 45,
+      "difficulty": "moderate",
+      "tags": [
+        "exercise",
+        "health",
+        "routine"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Finding exercise you enjoy makes fitness sustainable and transforms working out from a chore into a highlight."
+    },
+    {
+      "id": 117,
+      "name": "Surround Yourself with Positive People",
+      "description": "Surround Yourself with Positive or Inspiring People Daily, as small as one intentional conversation or group discussion and as large as seeking new community and support groups.",
+      "category": "Relationships",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "social",
+        "community"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "The people around you shape who you become \u2014 choosing positive company elevates your mindset and aspirations."
+    },
+    {
+      "id": 118,
+      "name": "Give Up Soda and Sugary Drinks",
+      "description": "Give Up Soda and Sugary Drinks for one month. Drink water, sparkling water, or tea instead.",
+      "category": "Balance",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "health",
+        "elimination"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Giving up sugary drinks reduces inflammation, stabilizes energy, and is one of the simplest health upgrades you can make."
+    },
+    {
+      "id": 119,
+      "name": "Take Deep Breaths",
+      "description": "Pause and take deep breaths throughout the day. This helps activate your parasympathetic nervous system, allowing your body to restore and rest.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "health",
+        "meditation"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Deep breathing activates your body's rest response, instantly reducing stress and restoring calm."
+    },
+    {
+      "id": 120,
+      "name": "Move Past Fear",
+      "description": "Move Past Fear or leave your comfort zone daily, in a small or big way.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "challenging",
+      "tags": [
+        "discipline",
+        "mindfulness"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Moving past fear daily expands your comfort zone and builds the courage that transforms every area of life."
+    },
+    {
+      "id": 121,
+      "name": "Pause Before Purchase",
+      "description": "Wait 24 hours before buying anything\u2014or 30 days for larger purchases over $100.",
+      "category": "Simplicity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "moderate",
+      "tags": [
+        "financial",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "A waiting period before purchases breaks impulse buying and helps you distinguish wants from genuine needs."
+    },
+    {
+      "id": 122,
+      "name": "Have a Healthy Breakfast Every Day",
+      "description": "Have a Healthy Breakfast Every Day.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "health",
+        "cooking",
+        "routine"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "A healthy breakfast fuels your body and mind, setting a nourishing foundation for the entire day."
+    },
+    {
+      "id": 123,
+      "name": "Draw, Color, or Paint Daily",
+      "description": "Draw, Color, or Paint Daily.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "easy",
+      "tags": [
+        "art",
+        "creativity",
+        "reflection"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Daily drawing or painting engages your creative mind and provides a meditative escape from verbal thinking."
+    },
+    {
+      "id": 124,
+      "name": "Assume Positive Intent",
+      "description": "Assume Positive Intent to grow in hope and trust daily.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "gratitude",
+        "compassion"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Assuming positive intent reduces conflict and helps you approach others with trust rather than suspicion."
+    },
+    {
+      "id": 125,
+      "name": "No Video or Computer Games",
+      "description": "No Video or Computer Games for one month.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Stepping away from games for a month frees hours for pursuits that build lasting fulfillment."
+    },
+    {
+      "id": 126,
+      "name": "Make Eye Contact",
+      "description": "Make Eye Contact While Speaking with Others\u2014listen with your whole self.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "easy",
+      "tags": [
+        "communication",
+        "mindfulness",
+        "social"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Eye contact communicates respect and presence, making every conversation more meaningful and connected."
+    },
+    {
+      "id": 127,
+      "name": "Read Daily",
+      "description": "Read Daily.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "easy",
+      "tags": [
+        "reading",
+        "reflection"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Daily reading expands your perspective and provides a steady stream of ideas that enrich your inner life."
+    },
+    {
+      "id": 128,
+      "name": "Work on a Hobby or Passion Project",
+      "description": "Work on a Hobby or Passion Project every day (choose the same project or rotate).",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "moderate",
+      "tags": [
+        "creativity",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Working on a passion project daily keeps your creative fire alive and gives you something meaningful beyond obligations."
+    },
+    {
+      "id": 129,
+      "name": "Lift Others Up",
+      "description": "Lift Others Up by sharing genuine encouragement daily.",
+      "category": "Generosity",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "compassion",
+        "communication",
+        "social"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Lifting others up with genuine encouragement creates a positive ripple effect that returns to you multiplied."
+    },
+    {
+      "id": 130,
+      "name": "Don't Take Others' Opinions So Seriously",
+      "description": "Don\u2019t Take Other People\u2019s Opinions So Seriously for One Month: Continue this habit after one month as it is helpful and relevant.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "mindfulness",
+        "patience"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Releasing attachment to others' opinions frees you to live authentically and make decisions from your own center."
+    },
+    {
+      "id": 131,
+      "name": "Listen to Your Body",
+      "description": "Listen to Your Body.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "health",
+        "mindfulness"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Tuning into your body's signals helps you honor your needs and prevents burnout before it starts."
+    },
+    {
+      "id": 132,
+      "name": "Learn to Say No",
+      "description": "Instead of people pleasing or jumping to say yes, discern your choices more carefully and share sincere and kind no\u2019s when it is important to do so!",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "discipline",
+        "communication"
+      ],
+      "bonus": true,
+      "page": 15,
+      "whyItMatters": "Learning to say no protects your energy and ensures your yes carries real weight and commitment."
+    },
+    {
+      "id": 133,
+      "name": "Explore",
+      "description": "Find one way to explore a new location, concept, or way of thinking.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 30,
+      "difficulty": "easy",
+      "tags": [
+        "creativity",
+        "mindfulness"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Daily exploration keeps curiosity alive and prevents life from becoming a monotonous routine."
+    },
+    {
+      "id": 134,
+      "name": "Invest in Yourself",
+      "description": "Invest in Yourself and Invest in the Future: Take one action every day to invest in your future.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "moderate",
+      "tags": [
+        "discipline",
+        "financial"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Investing in yourself daily \u2014 through learning, health, or growth \u2014 compounds into a richer, more capable future."
+    },
+    {
+      "id": 135,
+      "name": "Stop and Smell the Roses",
+      "description": "Slow down and pause throughout the day to see the beauty around you.",
+      "category": "Gratitude",
+      "type": "addition",
+      "timeOfDay": "throughout",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "gratitude"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Pausing to notice beauty throughout the day cultivates a grateful heart and a slower, richer experience of life."
+    },
+    {
+      "id": 136,
+      "name": "Daily Sunshine",
+      "description": "Create a habit of daily sunlight exposure for a healthy body and mind.",
+      "category": "Balance",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "health",
+        "nature"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Daily sunlight regulates your circadian rhythm, boosts vitamin D, and naturally elevates your mood."
+    },
+    {
+      "id": 137,
+      "name": "Watch the Sunset Daily",
+      "description": "Watch the Sunset Daily.",
+      "category": "Presence",
+      "type": "addition",
+      "timeOfDay": "evening",
+      "durationMinutes": 15,
+      "difficulty": "easy",
+      "tags": [
+        "nature",
+        "mindfulness"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Watching the sunset is a daily invitation to pause, reflect, and appreciate the beauty of the passing day."
+    },
+    {
+      "id": 138,
+      "name": "Write a Poem or Short Story Daily",
+      "description": "Write a Poem or Short Story Daily.",
+      "category": "Reflection",
+      "type": "addition",
+      "timeOfDay": "flexible",
+      "durationMinutes": 20,
+      "difficulty": "moderate",
+      "tags": [
+        "writing",
+        "creativity",
+        "reflection"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Writing poetry or stories daily sharpens your observation skills and gives voice to your inner world."
+    },
+    {
+      "id": 139,
+      "name": "No Tech or Phone on Lunch Breaks",
+      "description": "No Tech or Phone on Lunch Breaks.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "mindfulness",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "A tech-free lunch break restores your attention and turns midday into a genuine moment of rest."
+    },
+    {
+      "id": 140,
+      "name": "Say a Prayer or Intention",
+      "description": "Say a Prayer or Intention each morning to make your day an offering to a higher good.",
+      "category": "Transcendence",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "spiritual",
+        "prayer"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "A morning prayer or intention dedicates your day to something greater than yourself and sets a sacred tone."
+    },
+    {
+      "id": 141,
+      "name": "Visualize Positive Outcomes",
+      "description": "Imagine the best-case scenario before starting your day to enter into situations with more hope, presence, and peace.",
+      "category": "Intentionality",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 5,
+      "difficulty": "easy",
+      "tags": [
+        "mindfulness",
+        "reflection"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Visualizing positive outcomes primes your mind for hope and helps you enter each situation with confidence."
+    },
+    {
+      "id": 142,
+      "name": "Set Realistic Expectations",
+      "description": "Create manageable to-do lists and goals daily instead of stretching yourself thin or shooting for the stars. By setting realistic goals, we can feel a sense of accomplishment and contentment throughout the day. This will leave room for additional growth and opportunity as well!",
+      "category": "Order",
+      "type": "addition",
+      "timeOfDay": "morning",
+      "durationMinutes": 10,
+      "difficulty": "easy",
+      "tags": [
+        "discipline",
+        "routine",
+        "work"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Realistic expectations prevent overwhelm and create space for genuine accomplishment and contentment."
+    },
+    {
+      "id": 143,
+      "name": "Fast from One Food Item, Drink, or Activity",
+      "description": "Choose something you feel has been distracting your spiritual growth. Choose one thing for the month.",
+      "category": "Transcendence",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "challenging",
+      "tags": [
+        "spiritual",
+        "elimination",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Fasting from a chosen item cultivates spiritual discipline and reveals how much freedom lies in voluntary simplicity."
+    },
+    {
+      "id": 144,
+      "name": "No TV or Netflix",
+      "description": "Instead plan alternate activities that are constructive, enriching, or relaxing.",
+      "category": "Simplicity",
+      "type": "removal",
+      "timeOfDay": "throughout",
+      "durationMinutes": 0,
+      "difficulty": "moderate",
+      "tags": [
+        "elimination",
+        "discipline"
+      ],
+      "bonus": true,
+      "page": 16,
+      "whyItMatters": "Replacing TV with constructive activities reclaims hours for growth, connection, and genuine relaxation."
+    }
+  ],
+  "stackingSuggestions": [
+    {
+      "id": 1,
+      "routine": "Making morning coffee/tea",
+      "habitIds": [
+        10,
+        21,
+        65,
+        87
+      ],
+      "tip": "While the kettle heats or coffee brews, use those 3\u20135 minutes for your new habit."
+    },
+    {
+      "id": 2,
+      "routine": "Brushing teeth at night",
+      "habitIds": [
+        3,
+        60,
+        64,
+        11
+      ],
+      "tip": "Use toothbrushing as the trigger that starts your evening wind-down ritual."
+    },
+    {
+      "id": 3,
+      "routine": "Commuting to work",
+      "habitIds": [
+        92,
+        94,
+        93,
+        69
+      ],
+      "tip": "Transform commute time into growth time with audio or silent practice."
+    },
+    {
+      "id": 4,
+      "routine": "Eating lunch",
+      "habitIds": [
+        70,
+        5,
+        43,
+        49
+      ],
+      "tip": "Lunch is a natural pause \u2014 stack a relational or mindfulness habit here."
+    },
+    {
+      "id": 5,
+      "routine": "Getting into bed",
+      "habitIds": [
+        3,
+        1,
+        62,
+        68
+      ],
+      "tip": "The last minutes of your day are powerful for reflection habits."
+    },
+    {
+      "id": 6,
+      "routine": "Morning shower",
+      "habitIds": [
+        10,
+        87,
+        22,
+        25
+      ],
+      "tip": "Shower time is great for verbal affirmations \u2014 no one can hear you!"
+    },
+    {
+      "id": 7,
+      "routine": "Walking the dog",
+      "habitIds": [
+        79,
+        90,
+        69,
+        73
+      ],
+      "tip": "You're already outside and moving \u2014 layer a presence habit on top."
+    },
+    {
+      "id": 8,
+      "routine": "Sitting down at desk to start work",
+      "habitIds": [
+        31,
+        35,
+        21,
+        29
+      ],
+      "tip": "The moment you sit down is the ideal trigger for an intentionality habit."
+    },
+    {
+      "id": 9,
+      "routine": "Picking up kids from school",
+      "habitIds": [
+        52,
+        77,
+        55,
+        57
+      ],
+      "tip": "The transition from school to home is a relationship-building window."
+    },
+    {
+      "id": 10,
+      "routine": "Cooking dinner",
+      "habitIds": [
+        82,
+        16,
+        50,
+        75
+      ],
+      "tip": "Cooking is already a habit \u2014 make it more intentional."
+    }
+  ],
+  "categories": [
+    {
+      "name": "Gratitude",
+      "bgColor": "#FFF3E0",
+      "textColor": "#995700"
+    },
+    {
+      "name": "Simplicity",
+      "bgColor": "#E8F5E9",
+      "textColor": "#2E7D32"
+    },
+    {
+      "name": "Intentionality",
+      "bgColor": "#E3F2FD",
+      "textColor": "#1565C0"
+    },
+    {
+      "name": "Order",
+      "bgColor": "#F3E5F5",
+      "textColor": "#7B1FA2"
+    },
+    {
+      "name": "Generosity",
+      "bgColor": "#FFF8E1",
+      "textColor": "#F57F17"
+    },
+    {
+      "name": "Relationships",
+      "bgColor": "#FCE4EC",
+      "textColor": "#C62828"
+    },
+    {
+      "name": "Reflection",
+      "bgColor": "#E0F2F1",
+      "textColor": "#00695C"
+    },
+    {
+      "name": "Presence",
+      "bgColor": "#F1F8E9",
+      "textColor": "#558B2F"
+    },
+    {
+      "name": "Balance",
+      "bgColor": "#E8EAF6",
+      "textColor": "#283593"
+    },
+    {
+      "name": "Transcendence",
+      "bgColor": "#EDE7F6",
+      "textColor": "#4527A0"
+    }
+  ]
+}
