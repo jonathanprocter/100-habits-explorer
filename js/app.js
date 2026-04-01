@@ -35,7 +35,7 @@
   };
 
   // UI state
-  var activeTab = 'explore';
+  var activeTab = 'learn';
   var drawerOpen = false;
   var modalHabitId = null;
   var sidebarOpen = false;
@@ -1888,9 +1888,9 @@
     // Navigation tabs
     var tabBar = el('div', { className: 'nav-tabs' });
     var tabs = [
-      { id: 'explore', label: 'Explore Habits', emoji: '\uD83D\uDD0D' },
+      { id: 'learn', label: 'Learn the Science', emoji: '\uD83E\uDDE0' },
       { id: 'start', label: 'Get Started', emoji: '\uD83C\uDF31' },
-      { id: 'learn', label: 'Learn the Science', emoji: '\uD83E\uDDE0' }
+      { id: 'explore', label: 'Explore Habits', emoji: '\uD83D\uDD0D' }
     ];
     tabs.forEach(function (t) {
       var tab = el('button', {
