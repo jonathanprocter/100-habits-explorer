@@ -190,32 +190,89 @@
   // ============ B=MAP Data ============
   // Behavior = Motivation x Ability x Prompt
   // Rate each 1-5 for display
+  // The Action Line is an inverse curve: as Ability increases, the Motivation
+  // threshold drops. Behaviors above the line fire when prompted; below, they don't.
+  // We compute SVG coordinates so we can SHOW where a habit sits on the curve.
+  //
+  // SVG coordinate system (matches the Fogg Model diagram):
+  //   X-axis: 50 (hard) → 300 (easy)  = Ability
+  //   Y-axis: 15 (high) → 195 (low)   = Motivation
+  //   Action Line: cubic bezier from (50,18) through control points to (300,190)
+  //
+  // A point ABOVE the line (lower Y) means "this behavior will happen when prompted."
+  // A point BELOW the line (higher Y) means "prompt will fail."
+
+  function actionLineY(x) {
+    // Attempt to approximate the cubic bezier curve y-value at a given x.
+    // Curve: M50,18 C 60,75 130,160 300,190
+    // We use a simple parametric approximation (t from 0→1):
+    var t = (x - 50) / 250; // normalize x to 0–1 range
+    t = Math.max(0, Math.min(1, t));
+    // Cubic bezier: P = (1-t)^3*P0 + 3*(1-t)^2*t*P1 + 3*(1-t)*t^2*P2 + t^3*P3
+    var p0 = 18, p1 = 75, p2 = 160, p3 = 190;
+    var mt = 1 - t;
+    return mt*mt*mt*p0 + 3*mt*mt*t*p1 + 3*mt*t*t*p2 + t*t*t*p3;
+  }
+
   function getBMAP(habit) {
     var motivationMap = { easy: 2, moderate: 3, challenging: 4 };
     var abilityMap = { easy: 5, moderate: 3, challenging: 1 };
     var motivation = motivationMap[habit.difficulty] || 3;
     var ability = abilityMap[habit.difficulty] || 3;
-    // Prompt strength based on timeOfDay specificity
     var promptMap = { morning: 4, evening: 4, throughout: 2, flexible: 3 };
     var prompt = promptMap[habit.timeOfDay] || 3;
 
-    // Adjust for duration
     if (habit.durationMinutes <= 5) ability = Math.min(5, ability + 1);
     if (habit.durationMinutes >= 30) ability = Math.max(1, ability - 1);
-    if (habit.durationMinutes === 0) ability = Math.min(5, ability + 1); // removal habits
+    if (habit.durationMinutes === 0) ability = Math.min(5, ability + 1);
 
-    var insight;
-    if (ability >= 4) {
-      insight = "High ability — this habit is easy to start. Perfect for building momentum.";
-    } else if (ability <= 2 && motivation <= 2) {
-      insight = "This is a challenging habit. Start with the tiny version and build up over time.";
-    } else if (prompt <= 2) {
-      insight = "This habit needs a clear trigger. Try pairing it with an existing routine (habit stacking).";
+    // --- SVG positions for the Fogg Model diagram ---
+    // Full habit position
+    var fullX = 50 + (ability / 5) * 250;          // ability 1→5 maps to x 50→300
+    var fullY = 195 - (motivation / 5) * 180;       // motivation 1→5 maps to y 195→15
+    var curveAtFullX = actionLineY(fullX);
+    var fullAboveLine = fullY < curveAtFullX;
+
+    // Tiny version: always very easy (ability≈5), needs almost no motivation
+    var tinyX = 280;
+    var tinyY = 175;
+    var curveAtTinyX = actionLineY(tinyX);
+    var tinyAboveLine = tinyY < curveAtTinyX; // should always be true
+
+    // "Bad day" version: motivation drops by ~40%
+    var badDayY = Math.min(195, fullY + 60);
+    var badDayAboveLine = badDayY < curveAtFullX;
+
+    // --- Insight text ---
+    var insight, actionLineNote;
+    if (fullAboveLine && !badDayAboveLine) {
+      insight = "This habit sits NEAR the Action Line. On a good day it happens — on a tough day it won't. That's why the tiny version matters: it moves you safely above the line every single day.";
+      actionLineNote = "near";
+    } else if (!fullAboveLine) {
+      insight = "At full difficulty, this habit sits BELOW the Action Line — it needs more motivation than most days provide. Start with the tiny version, which sits way above the line. Build the habit first, then let it grow.";
+      actionLineNote = "below";
+    } else if (ability >= 4) {
+      insight = "This habit sits comfortably ABOVE the Action Line — high ability means low motivation needed. It'll happen even on your worst days. Perfect for building momentum.";
+      actionLineNote = "above";
     } else {
-      insight = "Good balance. Anchor it to a specific time and start small for the best results.";
+      insight = "This habit is above the Action Line but could slip on low-motivation days. Anchor it with a strong prompt (habit stack) and start with the tiny version for consistency.";
+      actionLineNote = "above-marginal";
     }
 
-    return { motivation: motivation, ability: ability, prompt: prompt, insight: insight };
+    if (prompt <= 2) {
+      insight += " Also: this habit needs a clearer prompt. Pair it with an existing routine to give it a reliable trigger.";
+    }
+
+    return {
+      motivation: motivation,
+      ability: ability,
+      prompt: prompt,
+      insight: insight,
+      actionLineNote: actionLineNote,
+      fullX: fullX, fullY: fullY, fullAboveLine: fullAboveLine,
+      tinyX: tinyX, tinyY: tinyY, tinyAboveLine: tinyAboveLine,
+      badDayY: badDayY, badDayAboveLine: badDayAboveLine
+    };
   }
 
   // ============ Celebration Suggestions ============
@@ -234,19 +291,81 @@
   var psychoedSections = [
     {
       emoji: "🧪",
-      title: "The B=MAP Formula",
-      content: '<p>Every behavior — from brushing your teeth to meditating — follows the same equation, discovered by BJ Fogg at Stanford:</p>' +
+      title: "The B=MAP Formula & The Action Line",
+      content: '<p>Every behavior follows the same equation, discovered by BJ Fogg at Stanford\'s Behavior Design Lab:</p>' +
         '<div class="psychoed-formula"><div class="formula-big"><span>B</span>ehavior = <span>M</span>otivation × <span>A</span>bility × <span>P</span>rompt</div>' +
-        '<div class="formula-explain">For a behavior to happen, all three must come together at the same moment. If any one is missing — no behavior.</div></div>' +
-        '<p>The breakthrough insight: <strong>instead of relying on motivation (which is unreliable), increase ability by making the behavior tiny, and use a clear prompt.</strong></p>'
+        '<div class="formula-explain">For a behavior to happen, Motivation and Ability must be sufficient at the exact moment a Prompt occurs. All three. At the same time.</div></div>' +
+        '<p>But this equation hides the most important insight — the <strong>Action Line</strong>:</p>' +
+        '<div class="fogg-model-wrap">' +
+          '<svg viewBox="0 0 340 250" class="fogg-model-svg" role="img" aria-label="The Fogg Behavior Model showing the inverse curve between Motivation and Ability">' +
+            '<rect x="50" y="10" width="260" height="190" fill="#f4f8f3" rx="6"/>' +
+            '<text x="22" y="115" fill="#6B6B6B" font-size="11" font-family="Inter,sans-serif" text-anchor="middle" transform="rotate(-90,22,115)">MOTIVATION</text>' +
+            '<text x="180" y="230" fill="#6B6B6B" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">ABILITY (Easy to do \u2192)</text>' +
+            '<line x1="50" y1="200" x2="50" y2="12" stroke="#bbb" stroke-width="1.5"/>' +
+            '<polygon points="50,10 47,16 53,16" fill="#bbb"/>' +
+            '<text x="56" y="24" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">High</text>' +
+            '<text x="56" y="198" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">Low</text>' +
+            '<line x1="50" y1="200" x2="310" y2="200" stroke="#bbb" stroke-width="1.5"/>' +
+            '<polygon points="312,200 306,197 306,203" fill="#bbb"/>' +
+            '<text x="62" y="214" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">Hard</text>' +
+            '<text x="282" y="214" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">Easy</text>' +
+            '<path d="M 50 18 C 60 75, 130 160, 300 190" fill="none" stroke="#5B7553" stroke-width="3"/>' +
+            '<text x="248" y="177" fill="#5B7553" font-size="10" font-family="Inter,sans-serif" font-weight="600" font-style="italic">Action Line</text>' +
+            '<text x="210" y="58" fill="#2E7D32" font-size="13" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">Behavior</text>' +
+            '<text x="210" y="73" fill="#2E7D32" font-size="13" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">HAPPENS</text>' +
+            '<text x="105" y="168" fill="#C62828" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">Behavior</text>' +
+            '<text x="105" y="181" fill="#C62828" font-size="11" font-family="Inter,sans-serif" text-anchor="middle">DOESN\'T happen</text>' +
+          '</svg>' +
+        '</div>' +
+        '<p><strong>The Action Line is the threshold.</strong> Any behavior that sits above it will happen when prompted. Anything below it won\'t — no matter how badly you want it.</p>' +
+        '<p>Now look at the <strong>shape of the curve</strong>. It\'s an <em>inverse relationship</em>:</p>' +
+        '<div class="psychoed-highlight">When a behavior is EASY to do (high Ability), you need almost ZERO Motivation for it to happen.<br><br>When a behavior is HARD to do (low Ability), you need ENORMOUS Motivation — the kind that only shows up on your best days.</div>' +
+        '<p>This is why willpower-based approaches fail. Motivation is a wave — it surges when you\'re inspired and crashes when you\'re tired, stressed, or busy. You cannot control motivation. But you <em>can</em> control Ability.</p>' +
+        '<p><strong>By making a behavior easier — tiny — you slide it to the right on this graph, where the Action Line is nearly flat.</strong> Down there, even a whisper of motivation is enough. The behavior happens on your best days AND your worst days.</p>' +
+        '<p>And the Prompt? It\'s the spark. Without a prompt at the right moment, even a behavior sitting way above the Action Line won\'t fire. That\'s why <strong>all three — M, A, and P — must converge at the same instant</strong> for real change to happen.</p>'
     },
     {
       emoji: "🌱",
-      title: "Make It Tiny (The 2-Minute Rule)",
-      content: '<p>The #1 mistake people make with habits: starting too big. "Meditate for 30 minutes" becomes "meditate never."</p>' +
-        '<div class="psychoed-highlight">Shrink the behavior until it takes less than 2 minutes. You\'re not trying to change the world — you\'re trying to show up.</div>' +
-        '<p>"Read 30 pages" becomes "read one paragraph." "Exercise daily" becomes "put on your running shoes." The goal is to <strong>make it so easy you can\'t say no.</strong></p>' +
-        '<p>Once you\'re doing the tiny version consistently, it naturally grows. But consistency comes first — always.</p>'
+      title: "Why Tiny Habits Create MASSIVE Change",
+      content: '<p>This is the part that sounds wrong until you understand the Action Line. How can "take 3 deep breaths" transform your life?</p>' +
+        '<div class="fogg-model-wrap">' +
+          '<svg viewBox="0 0 340 250" class="fogg-model-svg" role="img" aria-label="Diagram showing a challenging full habit near the Action Line versus the tiny version safely above it">' +
+            '<rect x="50" y="10" width="260" height="190" fill="#f4f8f3" rx="6"/>' +
+            '<line x1="50" y1="200" x2="50" y2="12" stroke="#bbb" stroke-width="1.5"/>' +
+            '<polygon points="50,10 47,16 53,16" fill="#bbb"/>' +
+            '<line x1="50" y1="200" x2="310" y2="200" stroke="#bbb" stroke-width="1.5"/>' +
+            '<polygon points="312,200 306,197 306,203" fill="#bbb"/>' +
+            '<text x="56" y="24" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">High motivation</text>' +
+            '<text x="56" y="198" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">Low motivation</text>' +
+            '<text x="62" y="214" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">Hard</text>' +
+            '<text x="282" y="214" fill="#A3A3A3" font-size="9" font-family="Inter,sans-serif">Easy</text>' +
+            '<path d="M 50 18 C 60 75, 130 160, 300 190" fill="none" stroke="#5B7553" stroke-width="3" opacity="0.4"/>' +
+            '<circle cx="95" cy="55" r="8" fill="#F9A825" stroke="#E65100" stroke-width="2"/>' +
+            '<text x="95" y="42" fill="#E65100" font-size="10" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle">\u201CMeditate 30 min\u201D</text>' +
+            '<line x1="95" y1="63" x2="95" y2="155" stroke="#C62828" stroke-width="1.5" stroke-dasharray="4 3"/>' +
+            '<circle cx="95" cy="155" r="6" fill="#C62828" opacity="0.5"/>' +
+            '<text x="100" y="147" fill="#C62828" font-size="9" font-family="Inter,sans-serif" font-style="italic">Bad day \u2193</text>' +
+            '<circle cx="275" cy="155" r="10" fill="#66BB6A" stroke="#2E7D32" stroke-width="2"/>' +
+            '<text x="275" y="140" fill="#2E7D32" font-size="10" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">\u201CTake 3 breaths\u201D</text>' +
+            '<path d="M 108 60 C 160 40, 220 100, 265 148" fill="none" stroke="#5B7553" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowGreen)"/>' +
+            '<defs><marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5B7553"/></marker></defs>' +
+            '<text x="195" y="80" fill="#5B7553" font-size="10" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle">Make it tiny!</text>' +
+          '</svg>' +
+        '</div>' +
+        '<p>Look at the two dots on the diagram:</p>' +
+        '<ul class="psychoed-list">' +
+          '<li><span class="list-num" style="background:#F9A825">\u25CF</span><span class="list-content"><strong>"Meditate 30 minutes"</strong> sits near the Action Line. On a motivated Monday? Sure, it happens. On a tired Tuesday after a long day? Motivation drops (red dot) — the behavior falls <em>below</em> the line. It doesn\'t happen. You "fail." You feel bad. You quit.</span></li>' +
+          '<li><span class="list-num" style="background:#66BB6A">\u25CF</span><span class="list-content"><strong>"Take 3 deep breaths"</strong> sits WAY above the Action Line in the safe zone. It\'s so easy that even your absolute worst day can\'t pull it below the line. It happens every. single. day.</span></li>' +
+        '</ul>' +
+        '<div class="psychoed-highlight">The tiny version doesn\'t need motivation. That\'s not a weakness — it\'s the entire strategy.<br><br>Consistency beats intensity. Every time.</div>' +
+        '<p>Here\'s what happens when you commit to the tiny version:</p>' +
+        '<ul class="psychoed-list">' +
+          '<li><span class="list-num">1</span><span class="list-content"><strong>Days 1-7:</strong> It feels ridiculously easy. "Why am I only taking 3 breaths?" Good — that\'s the point. You\'re not building a meditation practice yet. You\'re building the <em>wiring</em>.</span></li>' +
+          '<li><span class="list-num">2</span><span class="list-content"><strong>Days 8-14:</strong> It starts to feel automatic. You don\'t think about whether to do it. Your brain has begun encoding the Anchor \u2192 Behavior \u2192 Celebration loop.</span></li>' +
+          '<li><span class="list-num">3</span><span class="list-content"><strong>Days 15-21:</strong> You naturally start doing more. The 3 breaths become 5 minutes of meditation — not because you forced it, but because you <em>wanted</em> to. The behavior is growing from within.</span></li>' +
+          '<li><span class="list-num">4</span><span class="list-content"><strong>Days 22-30:</strong> The identity shift. You\'re no longer "trying to meditate." You <em>are</em> someone who meditates. The habit has become part of who you are.</span></li>' +
+        '</ul>' +
+        '<p>James Clear quantifies this: <strong>getting 1% better every day means you\'ll be 37 times better in a year.</strong> You don\'t build a cathedral by heaving boulders. You lay one small brick, perfectly, every single day. The tiny habit is not the ceiling — it\'s the foundation everything else is built on.</p>'
     },
     {
       emoji: "📎",
@@ -1548,11 +1667,59 @@
       '<div class="tiny-section-footer">Master the tiny version first. Once it\'s automatic, let it grow naturally.</div>';
     content.appendChild(tinyDiv);
 
-    // B=MAP Visual (NEW)
+    // B=MAP Visual — Fogg Model diagram with habit plotted on the Action Line
     var bmap = getBMAP(habit);
     var bmapDiv = el('div', { className: 'bmap-section' });
-    bmapDiv.innerHTML = '<div class="bmap-title">B=MAP Analysis</div>' +
-      '<div class="bmap-formula"><span>B</span>ehavior = <span>M</span>otivation \u00D7 <span>A</span>bility \u00D7 <span>P</span>rompt</div>' +
+
+    // Dynamic Fogg Model SVG showing where THIS habit sits
+    var fullColor = bmap.fullAboveLine ? '#F9A825' : '#C62828';
+    var fullStroke = bmap.fullAboveLine ? '#E65100' : '#B71C1C';
+    var fullLabel = escapeHtml(habit.name.length > 25 ? habit.name.slice(0, 22) + '...' : habit.name);
+    var tinyLabel = escapeHtml(getTinyVersion(habit).length > 30 ? getTinyVersion(habit).slice(0, 27) + '...' : getTinyVersion(habit));
+
+    // Build the per-habit Fogg Model diagram
+    var svgParts = [
+      '<svg viewBox="0 0 340 250" class="fogg-model-svg" role="img" aria-label="Fogg Behavior Model showing where ' + escapeHtml(habit.name) + ' sits relative to the Action Line">',
+      '<rect x="50" y="10" width="260" height="190" fill="#f4f8f3" rx="6"/>',
+      // Axes
+      '<line x1="50" y1="200" x2="50" y2="12" stroke="#bbb" stroke-width="1.5"/>',
+      '<polygon points="50,10 47,16 53,16" fill="#bbb"/>',
+      '<line x1="50" y1="200" x2="310" y2="200" stroke="#bbb" stroke-width="1.5"/>',
+      '<polygon points="312,200 306,197 306,203" fill="#bbb"/>',
+      '<text x="56" y="24" fill="#A3A3A3" font-size="8" font-family="Inter,sans-serif">High motivation</text>',
+      '<text x="56" y="198" fill="#A3A3A3" font-size="8" font-family="Inter,sans-serif">Low motivation</text>',
+      '<text x="62" y="214" fill="#A3A3A3" font-size="8" font-family="Inter,sans-serif">Hard to do</text>',
+      '<text x="264" y="214" fill="#A3A3A3" font-size="8" font-family="Inter,sans-serif">Easy to do</text>',
+      // Action Line
+      '<path d="M 50 18 C 60 75, 130 160, 300 190" fill="none" stroke="#5B7553" stroke-width="2.5"/>',
+      '<text x="246" y="180" fill="#5B7553" font-size="9" font-family="Inter,sans-serif" font-weight="600" font-style="italic">Action Line</text>'
+    ];
+
+    // Plot the full habit
+    svgParts.push('<circle cx="' + Math.round(bmap.fullX) + '" cy="' + Math.round(bmap.fullY) + '" r="7" fill="' + fullColor + '" stroke="' + fullStroke + '" stroke-width="2"/>');
+    // Label for full habit — position above or below the dot
+    var fullLabelY = bmap.fullY > 40 ? Math.round(bmap.fullY) - 14 : Math.round(bmap.fullY) + 20;
+    svgParts.push('<text x="' + Math.round(bmap.fullX) + '" y="' + fullLabelY + '" fill="' + fullStroke + '" font-size="9" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle">' + fullLabel + '</text>');
+
+    // "Bad day" drop line if the habit is marginal
+    if (bmap.fullAboveLine && !bmap.badDayAboveLine) {
+      svgParts.push('<line x1="' + Math.round(bmap.fullX) + '" y1="' + (Math.round(bmap.fullY) + 8) + '" x2="' + Math.round(bmap.fullX) + '" y2="' + Math.round(bmap.badDayY) + '" stroke="#C62828" stroke-width="1.5" stroke-dasharray="4 3"/>');
+      svgParts.push('<circle cx="' + Math.round(bmap.fullX) + '" cy="' + Math.round(bmap.badDayY) + '" r="5" fill="#C62828" opacity="0.4"/>');
+      svgParts.push('<text x="' + (Math.round(bmap.fullX) + 8) + '" y="' + (Math.round(bmap.badDayY) - 6) + '" fill="#C62828" font-size="8" font-family="Inter,sans-serif" font-style="italic">bad day</text>');
+    }
+
+    // Plot the tiny version
+    svgParts.push('<circle cx="' + Math.round(bmap.tinyX) + '" cy="' + Math.round(bmap.tinyY) + '" r="8" fill="#66BB6A" stroke="#2E7D32" stroke-width="2"/>');
+    svgParts.push('<text x="' + Math.round(bmap.tinyX) + '" y="' + (Math.round(bmap.tinyY) - 14) + '" fill="#2E7D32" font-size="9" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle">Tiny version</text>');
+
+    // Arrow from full to tiny
+    svgParts.push('<defs><marker id="arrowG' + habit.id + '" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5B7553"/></marker></defs>');
+    svgParts.push('<path d="M ' + (Math.round(bmap.fullX) + 10) + ' ' + Math.round(bmap.fullY) + ' C ' + Math.round((bmap.fullX + bmap.tinyX) / 2) + ' ' + Math.round(bmap.fullY - 20) + ', ' + Math.round((bmap.fullX + bmap.tinyX) / 2 + 30) + ' ' + Math.round(bmap.tinyY - 20) + ', ' + (Math.round(bmap.tinyX) - 10) + ' ' + Math.round(bmap.tinyY) + '" fill="none" stroke="#5B7553" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowG' + habit.id + ')"/>');
+
+    svgParts.push('</svg>');
+
+    bmapDiv.innerHTML = '<div class="bmap-title">Where This Habit Sits on the Action Line</div>' +
+      '<div class="fogg-model-wrap">' + svgParts.join('') + '</div>' +
       '<div class="bmap-bars">' +
         '<div class="bmap-bar-row"><span class="bmap-bar-label">Motivation</span>' +
           '<div class="bmap-bar-track"><div class="bmap-bar-fill motivation" style="width:' + (bmap.motivation * 20) + '%"></div></div>' +

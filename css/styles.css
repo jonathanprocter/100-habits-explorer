@@ -1138,6 +1138,19 @@ h3 { font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--text-prim
   line-height: 1.5;
 }
 
+/* Fogg Behavior Model SVG Diagram */
+.fogg-model-wrap {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.fogg-model-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: inline-block;
+}
+
 /* Tiny Version in Modal */
 .tiny-section {
   padding: 16px;
