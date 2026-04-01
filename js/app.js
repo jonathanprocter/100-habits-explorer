@@ -22,6 +22,7 @@
     reflectionNotes: '',
     existingRoutines: [],
     celebrations: {},
+    checkins: {},
     lastUpdated: null
   };
 
@@ -35,7 +36,7 @@
   };
 
   // UI state
-  var activeTab = 'learn';
+  var activeTab = 'learn'; // overridden to 'today' after loadState if focus habit exists
   var drawerOpen = false;
   var modalHabitId = null;
   var sidebarOpen = false;
@@ -521,6 +522,7 @@
         state.reflectionNotes = parsed.reflectionNotes || '';
         state.existingRoutines = parsed.existingRoutines || [];
         state.celebrations = parsed.celebrations || {};
+        state.checkins = parsed.checkins || {};
         state.lastUpdated = parsed.lastUpdated || null;
       }
     } catch (e) { /* silent fail */ }
@@ -532,6 +534,7 @@
     state.reflectionNotes = '';
     state.existingRoutines = [];
     state.celebrations = {};
+    state.checkins = {};
     state.lastUpdated = null;
     saveState();
     renderAll();
@@ -892,6 +895,359 @@
     wrapper.appendChild(cta);
 
     container.appendChild(wrapper);
+  }
+
+  // ============ Today Dashboard: Helpers ============
+
+  function getTodayString() {
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+
+  function isCheckedInToday(habitId) {
+    var dates = state.checkins[habitId] || [];
+    return dates.indexOf(getTodayString()) !== -1;
+  }
+
+  function toggleCheckin(habitId) {
+    if (!state.checkins[habitId]) state.checkins[habitId] = [];
+    var today = getTodayString();
+    var idx = state.checkins[habitId].indexOf(today);
+    if (idx === -1) {
+      state.checkins[habitId].push(today);
+      state.checkins[habitId].sort();
+    } else {
+      state.checkins[habitId].splice(idx, 1);
+    }
+    saveState();
+  }
+
+  function computeStreak(habitId) {
+    var dates = state.checkins[habitId] || [];
+    if (dates.length === 0) return 0;
+    var sorted = dates.slice().sort().reverse();
+    var today = getTodayString();
+    // Streak must include today or yesterday to be "current"
+    var yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    var yStr = yesterday.getFullYear() + '-' + String(yesterday.getMonth() + 1).padStart(2, '0') + '-' + String(yesterday.getDate()).padStart(2, '0');
+    if (sorted[0] !== today && sorted[0] !== yStr) return 0;
+    var streak = 1;
+    for (var i = 1; i < sorted.length; i++) {
+      var prev = new Date(sorted[i - 1] + 'T12:00:00');
+      var curr = new Date(sorted[i] + 'T12:00:00');
+      var diff = (prev - curr) / (1000 * 60 * 60 * 24);
+      if (Math.round(diff) === 1) streak++;
+      else break;
+    }
+    return streak;
+  }
+
+  function computeLongestStreak(habitId) {
+    var dates = state.checkins[habitId] || [];
+    if (dates.length === 0) return 0;
+    var sorted = dates.slice().sort();
+    var longest = 1;
+    var current = 1;
+    for (var i = 1; i < sorted.length; i++) {
+      var prev = new Date(sorted[i - 1] + 'T12:00:00');
+      var curr = new Date(sorted[i] + 'T12:00:00');
+      var diff = (curr - prev) / (1000 * 60 * 60 * 24);
+      if (Math.round(diff) === 1) {
+        current++;
+        if (current > longest) longest = current;
+      } else if (Math.round(diff) > 1) {
+        current = 1;
+      }
+    }
+    return longest;
+  }
+
+  function getIdentityStatement(habit) {
+    var n = habit.name.toLowerCase();
+    if (n.includes('gratitude list') || n.includes('grateful')) return "I am someone who sees the good in every day.";
+    if (n.includes('gratitude letter')) return "I am someone who expresses gratitude to the people in my life.";
+    if (n.includes('gratitude') && n.includes('meal')) return "I am someone who begins each meal with thankfulness.";
+    if (n.includes('gratitude') || n.includes('celebrate your progress')) return "I am someone who lives with gratitude.";
+    if (n.includes('affirm')) return "I am someone who speaks kindly to themselves.";
+    if (n.includes('journal')) return "I am someone who reflects through writing.";
+    if (n.includes('meditat')) return "I am someone who creates space for stillness.";
+    if (n.includes('walk') && !n.includes('talk')) return "I am someone who walks every day.";
+    if (n.includes('exercise') || n.includes('move your body')) return "I am someone who moves their body daily.";
+    if (n.includes('read')) return "I am someone who nourishes their mind.";
+    if (n.includes('prayer') || n.includes('pray')) return "I am someone who connects through prayer.";
+    if (n.includes('kind')) return "I am someone who leads with kindness.";
+    if (n.includes('water')) return "I am someone who takes care of their body.";
+    if (n.includes('bed') || n.includes('sleep')) return "I am someone who honors their rest.";
+    if (n.includes('phone') || n.includes('screen') || n.includes('social media')) return "I am someone who controls technology, not the other way around.";
+    if (n.includes('listen')) return "I am someone who truly listens.";
+    if (n.includes('complain')) return "I am someone who chooses acceptance over complaint.";
+    if (n.includes('morning') || n.includes('wake') || n.includes('rise') || n.includes('heroic')) return "I am someone who starts each day with intention.";
+    if (n.includes('clean') || n.includes('organiz') || n.includes('declutter') || n.includes('desk')) return "I am someone who creates order around me.";
+    if (n.includes('creative') || n.includes('art') || n.includes('write') || n.includes('poem')) return "I am someone who creates every day.";
+    if (n.includes('nature') || n.includes('outside') || n.includes('garden')) return "I am someone who connects with nature.";
+    if (n.includes('honest') || n.includes('honesty')) return "I am someone who speaks the truth.";
+    if (n.includes('hospitality') || n.includes('welcom')) return "I am someone who makes others feel welcome.";
+    if (n.includes('quality time')) return "I am someone who is fully present with the people I love.";
+    if (n.includes('no alcohol') || n.includes('no dessert') || n.includes('caffeine')) return "I am someone who chooses what serves me.";
+    if (n.includes('eat healthy') || n.includes('eat at home')) return "I am someone who nourishes their body well.";
+    if (n.includes('music')) return "I am someone who fills their life with beauty.";
+    if (n.includes('stillness') || n.includes('silence') || n.includes('present')) return "I am someone who is fully here, right now.";
+    if (n.includes('one thing at a time') || n.includes('no rushing')) return "I am someone who moves through life with calm intention.";
+
+    var catIdentity = {
+      "Gratitude": "I am someone who lives with gratitude.",
+      "Simplicity": "I am someone who chooses simplicity over clutter.",
+      "Intentionality": "I am someone who lives on purpose.",
+      "Order": "I am someone who brings structure to my life.",
+      "Generosity": "I am someone who gives freely.",
+      "Relationships": "I am someone who invests in the people I love.",
+      "Reflection": "I am someone who learns from every day.",
+      "Presence": "I am someone who is fully here, right now.",
+      "Balance": "I am someone who takes care of themselves.",
+      "Transcendence": "I am someone who reaches for something greater."
+    };
+    return catIdentity[habit.category] || "I am someone who shows up for myself every day.";
+  }
+
+  var milestones = [
+    { day: 1, title: "Day 1", subtitle: "The Seed", message: "You showed up. That's everything. Most people never start." },
+    { day: 3, title: "Day 3", subtitle: "Momentum", message: "Three days in a row. The neural pathway is forming." },
+    { day: 7, title: "Week 1", subtitle: "Foundation", message: "A full week. You're proving this is real — to yourself." },
+    { day: 14, title: "Week 2", subtitle: "Automatic", message: "It's becoming automatic. You don't debate whether to do it anymore." },
+    { day: 21, title: "Week 3", subtitle: "Growth", message: "The tiny version may be growing on its own. Let it. Don't force it." },
+    { day: 30, title: "Month 1", subtitle: "Identity", message: "This is who you are now. Not something you're trying — something you ARE." },
+    { day: 60, title: "Month 2", subtitle: "Rooted", message: "Two months. The habit is deeply rooted. Others are starting to notice." },
+    { day: 90, title: "Month 3", subtitle: "Transformed", message: "A full season of change. You've transformed. What will you grow next?" }
+  ];
+
+  function getCurrentMilestone(streak) {
+    var current = milestones[0];
+    for (var i = 0; i < milestones.length; i++) {
+      if (streak >= milestones[i].day) current = milestones[i];
+    }
+    return current;
+  }
+
+  function getNextMilestone(streak) {
+    for (var i = 0; i < milestones.length; i++) {
+      if (milestones[i].day > streak) return milestones[i];
+    }
+    return null;
+  }
+
+  // ============ Render: Today Dashboard ============
+  function renderToday() {
+    var container = $('#today-content');
+    if (!container) return;
+    container.innerHTML = '';
+
+    var wrapper = el('div', { className: 'today-dashboard' });
+
+    // No focus habit set
+    if (!state.monthlyFocus) {
+      var emptyDiv = el('div', { className: 'today-empty' });
+      emptyDiv.innerHTML = '<div class="today-empty-icon">\uD83C\uDF31</div>' +
+        '<h2>Your Daily Habit Dashboard</h2>' +
+        '<p>Set a monthly focus habit to unlock your daily dashboard with streak tracking, milestone progress, and identity reinforcement.</p>';
+      var emptyActions = el('div', { className: 'today-empty-actions' });
+      if (state.selectedHabits.length > 0) {
+        var openDrawerBtn = el('button', { className: 'onboarding-btn primary' }, 'Set My Focus Habit');
+        openDrawerBtn.addEventListener('click', openDrawer);
+        emptyActions.appendChild(openDrawerBtn);
+      } else {
+        var findBtn = el('button', { className: 'onboarding-btn primary' }, 'Find My First Habit');
+        findBtn.addEventListener('click', function () { switchTab('start'); });
+        emptyActions.appendChild(findBtn);
+        var learnBtn = el('button', { className: 'onboarding-btn secondary' }, 'Learn the Science First');
+        learnBtn.addEventListener('click', function () { switchTab('learn'); });
+        emptyActions.appendChild(learnBtn);
+      }
+      emptyDiv.appendChild(emptyActions);
+      wrapper.appendChild(emptyDiv);
+      container.appendChild(wrapper);
+      return;
+    }
+
+    var habit = getHabitById(state.monthlyFocus);
+    if (!habit) return;
+
+    var catColor = getCategoryColor(habit.category);
+    var streak = computeStreak(habit.id);
+    var longest = computeLongestStreak(habit.id);
+    var totalDays = (state.checkins[habit.id] || []).length;
+    var doneToday = isCheckedInToday(habit.id);
+    var identity = getIdentityStatement(habit);
+    var tinyVer = getTinyVersion(habit);
+    var currentMs = getCurrentMilestone(streak);
+    var nextMs = getNextMilestone(streak);
+
+    // Identity Statement — large, prominent
+    var identityDiv = el('div', { className: 'today-identity' });
+    identityDiv.innerHTML = '<div class="today-identity-text">\u201C' + escapeHtml(identity) + '\u201D</div>' +
+      '<div class="today-identity-sub">Every check-in is a vote for this identity.</div>';
+    wrapper.appendChild(identityDiv);
+
+    // Focus Habit Card
+    var focusCard = el('div', { className: 'today-focus-card' });
+    focusCard.innerHTML = '<div class="today-focus-header">' +
+      '<span class="category-tag" style="background:' + catColor.bgColor + ';color:' + catColor.textColor + '">' + escapeHtml(habit.category) + '</span>' +
+      '<span class="today-focus-label">\u2605 Monthly Focus</span>' +
+      '</div>' +
+      '<h2 class="today-focus-name">' + escapeHtml(habit.name) + '</h2>' +
+      '<div class="today-tiny-prompt">' +
+        '<span class="tiny-hint-icon">\uD83C\uDF31</span>' +
+        '<div><strong>Today\'s tiny version:</strong><br>' + escapeHtml(tinyVer) + '</div>' +
+      '</div>';
+
+    // ABC recipe if stacking is set up
+    var stackMatch = null;
+    state.existingRoutines.forEach(function (routineName) {
+      var suggestion = stackingSuggestions.find(function (s) { return s.routine === routineName; });
+      if (suggestion && suggestion.habitIds.indexOf(habit.id) !== -1) {
+        stackMatch = { routine: routineName, tip: suggestion.tip };
+      }
+    });
+    if (stackMatch) {
+      var abcHtml = '<div class="today-abc">' +
+        '<strong>After I</strong> ' + escapeHtml(stackMatch.routine.toLowerCase()) + ', ' +
+        '<strong>I will</strong> ' + escapeHtml(tinyVer.toLowerCase()) + '.';
+      if (state.celebrations[habit.id]) {
+        abcHtml += '<br><strong>Then I\'ll</strong> ' + escapeHtml(state.celebrations[habit.id]) + '.';
+      }
+      abcHtml += '</div>';
+      focusCard.innerHTML += abcHtml;
+    }
+
+    wrapper.appendChild(focusCard);
+
+    // I DID IT button
+    var checkinDiv = el('div', { className: 'today-checkin' });
+    var checkinBtn = el('button', {
+      className: 'today-checkin-btn' + (doneToday ? ' done' : ''),
+      'aria-label': doneToday ? 'Completed today. Click to undo.' : 'Mark today\'s habit as done'
+    });
+    checkinBtn.innerHTML = doneToday
+      ? '<span class="checkin-icon">\u2714</span> Done Today!'
+      : '<span class="checkin-icon">\u261D</span> I Did It!';
+    checkinBtn.addEventListener('click', function () {
+      if (doneToday) {
+        showConfirm('Undo today\'s check-in?', function () {
+          toggleCheckin(habit.id);
+          renderToday();
+          renderFloatingPill();
+        });
+      } else {
+        toggleCheckin(habit.id);
+        var celeb = state.celebrations[habit.id] || celebrationIdeas[Math.floor(Math.random() * celebrationIdeas.length)];
+        showToast('\uD83C\uDF89 ' + celeb);
+        renderToday();
+        renderFloatingPill();
+      }
+    });
+    checkinDiv.appendChild(checkinBtn);
+    wrapper.appendChild(checkinDiv);
+
+    // Streak Stats
+    var statsDiv = el('div', { className: 'today-stats' });
+    statsDiv.innerHTML =
+      '<div class="today-stat">' +
+        '<div class="today-stat-number">' + streak + '</div>' +
+        '<div class="today-stat-label">Current Streak</div>' +
+      '</div>' +
+      '<div class="today-stat">' +
+        '<div class="today-stat-number">' + longest + '</div>' +
+        '<div class="today-stat-label">Longest Streak</div>' +
+      '</div>' +
+      '<div class="today-stat">' +
+        '<div class="today-stat-number">' + totalDays + '</div>' +
+        '<div class="today-stat-label">Total Days</div>' +
+      '</div>';
+    wrapper.appendChild(statsDiv);
+
+    // Milestone Progress
+    var msDiv = el('div', { className: 'today-milestone' });
+    var msHtml = '<div class="today-milestone-header">30-Day Journey</div>';
+    msHtml += '<div class="today-milestone-track">';
+    milestones.forEach(function (ms) {
+      if (ms.day > 90) return;
+      var reached = streak >= ms.day;
+      var isCurrent = ms === currentMs;
+      var pct = Math.min(100, (ms.day / 30) * 100);
+      if (ms.day > 30) pct = 100; // overflow milestones sit at end
+      msHtml += '<div class="milestone-marker' + (reached ? ' reached' : '') + (isCurrent ? ' current' : '') + '" style="left:' + Math.min(95, pct) + '%">' +
+        '<div class="milestone-dot"></div>' +
+        '<div class="milestone-label">' + ms.title + '</div>' +
+      '</div>';
+    });
+    // Progress bar fill
+    var progressPct = Math.min(100, (streak / 30) * 100);
+    msHtml += '<div class="milestone-bar"><div class="milestone-bar-fill" style="width:' + progressPct + '%"></div></div>';
+    msHtml += '</div>';
+
+    // Current milestone message
+    if (streak > 0) {
+      msHtml += '<div class="today-milestone-msg">' +
+        '<strong>' + escapeHtml(currentMs.title) + ': ' + escapeHtml(currentMs.subtitle) + '</strong><br>' +
+        escapeHtml(currentMs.message) +
+      '</div>';
+    }
+    if (nextMs && streak > 0) {
+      var daysToNext = nextMs.day - streak;
+      msHtml += '<div class="today-milestone-next">' + daysToNext + ' day' + (daysToNext !== 1 ? 's' : '') + ' until ' + escapeHtml(nextMs.title) + ': ' + escapeHtml(nextMs.subtitle) + '</div>';
+    }
+
+    msDiv.innerHTML = msHtml;
+    wrapper.appendChild(msDiv);
+
+    // Calendar
+    wrapper.appendChild(renderCalendar(habit.id));
+
+    container.appendChild(wrapper);
+  }
+
+  function renderCalendar(habitId) {
+    var dates = state.checkins[habitId] || [];
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth();
+    var today = getTodayString();
+
+    var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+    var firstDay = new Date(year, month, 1);
+    var lastDay = new Date(year, month + 1, 0);
+    // Monday-based week: 0=Mon, 6=Sun
+    var startDow = (firstDay.getDay() + 6) % 7;
+    var daysInMonth = lastDay.getDate();
+
+    var calDiv = el('div', { className: 'today-calendar' });
+    var html = '<div class="calendar-title">' + monthNames[month] + ' ' + year + '</div>';
+    html += '<div class="calendar-grid">';
+    // Day name headers
+    dayNames.forEach(function (d) {
+      html += '<div class="calendar-header">' + d + '</div>';
+    });
+    // Empty cells before first day
+    for (var i = 0; i < startDow; i++) {
+      html += '<div class="calendar-cell empty"></div>';
+    }
+    // Day cells
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dateStr = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      var isToday = dateStr === today;
+      var isChecked = dates.indexOf(dateStr) !== -1;
+      var isFuture = new Date(dateStr + 'T12:00:00') > new Date(today + 'T23:59:59');
+      var cls = 'calendar-cell';
+      if (isChecked) cls += ' checked';
+      if (isToday) cls += ' today';
+      if (isFuture) cls += ' future';
+      html += '<div class="' + cls + '"><span>' + d + '</span></div>';
+    }
+    html += '</div>';
+    calDiv.innerHTML = html;
+    return calDiv;
   }
 
   // ============ Render: Sidebar Filters ============
@@ -1792,6 +2148,7 @@
     renderFloatingPill();
     renderOnboarding();
     renderPsychoed();
+    renderToday();
     if (drawerOpen) renderDrawerContent();
   }
 
@@ -1812,6 +2169,8 @@
         stackingSuggestions = data.stackingSuggestions;
 
         loadState();
+        // Returning user with a focus habit → land on Today dashboard
+        if (state.monthlyFocus) activeTab = 'today';
         buildLayout();
         renderAll();
       })
@@ -1888,9 +2247,10 @@
     // Navigation tabs
     var tabBar = el('div', { className: 'nav-tabs' });
     var tabs = [
-      { id: 'learn', label: 'Learn the Science', emoji: '\uD83E\uDDE0' },
+      { id: 'today', label: 'Today', emoji: '\u2600\uFE0F' },
+      { id: 'learn', label: 'Learn', emoji: '\uD83E\uDDE0' },
       { id: 'start', label: 'Get Started', emoji: '\uD83C\uDF31' },
-      { id: 'explore', label: 'Explore Habits', emoji: '\uD83D\uDD0D' }
+      { id: 'explore', label: 'Explore', emoji: '\uD83D\uDD0D' }
     ];
     tabs.forEach(function (t) {
       var tab = el('button', {
@@ -1901,6 +2261,12 @@
       tabBar.appendChild(tab);
     });
     main.appendChild(tabBar);
+
+    // Tab: Today (daily dashboard)
+    var todayTab = el('div', { className: 'tab-content' + (activeTab === 'today' ? ' active' : ''), 'data-tab': 'today' });
+    var todayContent = el('div', { id: 'today-content' });
+    todayTab.appendChild(todayContent);
+    main.appendChild(todayTab);
 
     // Tab: Explore (habit grid)
     var exploreTab = el('div', { className: 'tab-content' + (activeTab === 'explore' ? ' active' : ''), 'data-tab': 'explore' });
